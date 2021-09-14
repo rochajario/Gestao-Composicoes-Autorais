@@ -1,0 +1,7 @@
+﻿namespace Gestao_Composicoes_Autorais_Src.Constants
+{
+    public class MensagensErro
+    {
+        public const string ErroInesperado = "Ocorreu um Erro Inesperado.";
+    }
+}

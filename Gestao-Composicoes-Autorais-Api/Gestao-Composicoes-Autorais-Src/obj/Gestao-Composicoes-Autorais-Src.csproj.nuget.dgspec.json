@@ -1,0 +1,80 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\jario.junior\\Desktop\\Gestao-Composicoes-Autorais-Api\\Gestao-Composicoes-Autorais-Api\\Gestao-Composicoes-Autorais-Src\\Gestao-Composicoes-Autorais-Src.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\jario.junior\\Desktop\\Gestao-Composicoes-Autorais-Api\\Gestao-Composicoes-Autorais-Api\\Gestao-Composicoes-Autorais-Src\\Gestao-Composicoes-Autorais-Src.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jario.junior\\Desktop\\Gestao-Composicoes-Autorais-Api\\Gestao-Composicoes-Autorais-Api\\Gestao-Composicoes-Autorais-Src\\Gestao-Composicoes-Autorais-Src.csproj",
+        "projectName": "Gestao-Composicoes-Autorais-Src",
+        "projectPath": "C:\\Users\\jario.junior\\Desktop\\Gestao-Composicoes-Autorais-Api\\Gestao-Composicoes-Autorais-Api\\Gestao-Composicoes-Autorais-Src\\Gestao-Composicoes-Autorais-Src.csproj",
+        "packagesPath": "C:\\Users\\jario.junior\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jario.junior\\Desktop\\Gestao-Composicoes-Autorais-Api\\Gestao-Composicoes-Autorais-Api\\Gestao-Composicoes-Autorais-Src\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jario.junior\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/alm-animaeducacao/_packaging/f0724f3b-3ab9-4a8f-87fd-9bd93d87cd05/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.10.13, )"
+            },
+            "ServiceStack": {
+              "target": "Package",
+              "version": "[5.12.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
