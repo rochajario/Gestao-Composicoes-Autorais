@@ -1,37 +1,37 @@
-CREATE TABLE IF NOT EXISTS `__EFMigrationsHistory` (
-    `MigrationId` varchar(150) CHARACTER SET utf8mb4 NOT NULL,
-    `ProductVersion` varchar(32) CHARACTER SET utf8mb4 NOT NULL,
-    CONSTRAINT `PK___EFMigrationsHistory` PRIMARY KEY (`MigrationId`)
-) CHARACTER SET utf8mb4;
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+nupkg/
 
-START TRANSACTION;
+# Visual Studio Code
+.vscode
 
-ALTER DATABASE CHARACTER SET utf8mb4;
+# Rider
+.idea
 
-CREATE TABLE `Autores` (
-    `Id` bigint NOT NULL AUTO_INCREMENT,
-    `Nome` longtext CHARACTER SET utf8mb4 NOT NULL,
-    `Categoria` longtext CHARACTER SET utf8mb4 NOT NULL,
-    CONSTRAINT `PK_Autores` PRIMARY KEY (`Id`)
-) CHARACTER SET utf8mb4;
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-CREATE TABLE `Musicas` (
-    `Id` bigint NOT NULL AUTO_INCREMENT,
-    `Nome` longtext CHARACTER SET utf8mb4 NOT NULL,
-    `Genero` longtext CHARACTER SET utf8mb4 NOT NULL,
-    CONSTRAINT `PK_Musicas` PRIMARY KEY (`Id`)
-) CHARACTER SET utf8mb4;
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+msbuild.log
+msbuild.err
+msbuild.wrn
 
-INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
-VALUES ('20210916021759_Mysql_Configuration', '5.0.10');
-
-COMMIT;
-
-
-
-
-
-mysql://b5691deeae6344:a58b1d74@us-cdbr-east-04.cleardb.com/heroku_0767c87dedba4d8?reconnect=true
-
-
-"server=us-cdbr-east-04.cleardb.com;user=b5691deeae6344;password=a58b1d74;database=heroku_0767c87dedba4d8"
+# Visual Studio 2015
+.vs/
