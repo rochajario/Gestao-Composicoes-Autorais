@@ -6,7 +6,7 @@ namespace Gestao_Composicoes_Autorais_Src.Data.Context
 {
     public class ApplicationContext : DbContext
     {
-        private const string CONNECTION_STRING = "server=us-cdbr-east-04.cleardb.com;user=b61ec255eb3f4c;password=3bcfe92fafeb1c0;database=heroku_de62e38b5e5347f";
+        //private const string CONNECTION_STRING = "server=;user=;password=;database=";
 
         public DbSet<Musica> Musicas { get; set; }
         public DbSet<Autor> Autores { get; set; }
@@ -17,9 +17,8 @@ namespace Gestao_Composicoes_Autorais_Src.Data.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                var conn = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
-                optionsBuilder.UseMySql(conn, new MySqlServerVersion(new Version(15, 1)))
-                //optionsBuilder.UseMySql(CONNECTION_STRING, new MySqlServerVersion(new Version(15, 1)))
+                var databaseConnectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
+                optionsBuilder.UseMySql(databaseConnectionString, new MySqlServerVersion(new Version(15, 1)))
                     .EnableSensitiveDataLogging()
                     .EnableDetailedErrors();
             }
