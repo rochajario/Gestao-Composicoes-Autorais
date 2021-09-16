@@ -22,6 +22,7 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
+        "DB_CONNECTION_STRING": "server=localhost;user=root;password='';database=Gestao_Composicoes_Autorais",
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": "true",

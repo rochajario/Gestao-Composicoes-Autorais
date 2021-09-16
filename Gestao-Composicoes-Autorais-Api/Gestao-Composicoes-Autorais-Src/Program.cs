@@ -1,11 +1,5 @@
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Gestao_Composicoes_Autorais_Src
 {
@@ -13,6 +7,7 @@ namespace Gestao_Composicoes_Autorais_Src
     {
         public static void Main(string[] args)
         {
+            //Console.WriteLine(Environment.GetEnvironmentVariable("DB_CONNECTION_STRING"));
             CreateHostBuilder(args).Build().Run();
         }
 

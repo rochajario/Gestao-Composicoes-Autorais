@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Gestao_Composicoes_Autorais_Src.Constants;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using ServiceStack.Host;
 using System.Net;
-using Gestao_Composicoes_Autorais_Src.Constants;
 
 namespace Gestao_Composicoes_Autorais_Src.Configuration
 {
