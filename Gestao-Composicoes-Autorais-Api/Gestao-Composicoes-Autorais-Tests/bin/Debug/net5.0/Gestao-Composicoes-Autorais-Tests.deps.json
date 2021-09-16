@@ -1711,22 +1711,6 @@
         "runtime": {
           "Gestao-Composicoes-Autorais-Src.dll": {}
         }
-      },
-      "Npgsql.EntityFrameworkCore.PostgreSQL/5.0.7.0": {
-        "runtime": {
-          "Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
-            "assemblyVersion": "5.0.7.0",
-            "fileVersion": "5.0.7.0"
-          }
-        }
-      },
-      "Npgsql/5.0.7.0": {
-        "runtime": {
-          "Npgsql.dll": {
-            "assemblyVersion": "5.0.7.0",
-            "fileVersion": "5.0.7.0"
-          }
-        }
       }
     }
   },
@@ -2977,16 +2961,6 @@
     },
     "Gestao-Composicoes-Autorais-Src/1.0.0": {
       "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Npgsql.EntityFrameworkCore.PostgreSQL/5.0.7.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Npgsql/5.0.7.0": {
-      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

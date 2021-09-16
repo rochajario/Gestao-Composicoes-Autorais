@@ -8,16 +8,16 @@ namespace Gestao_Composicoes_Autorais_Src.Exceptions
 {
     public class UnprocessableEntityStrategy : IExceptionStrategy
     {
-        private ArgumentException innerException;
+        private readonly ArgumentException _innerException;
 
         public UnprocessableEntityStrategy(ArgumentException innerException)
         {
-            this.innerException = innerException;
+            _innerException = innerException;
         }
 
         public void Execute()
         {
-            throw new HttpException((int)HttpStatusCode.UnprocessableEntity, String.Format(MensagensErro.ParametroInvalido, this.innerException.ParamName));
+            throw new HttpException((int)HttpStatusCode.UnprocessableEntity, String.Format(MensagensErro.ParametroInvalido, _innerException.ParamName));
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using Gestao_Composicoes_Autorais_Src.Model.Forms;
-using Gestao_Composicoes_Autorais_Src.Service;
 using Microsoft.AspNetCore.Mvc;
-using System;
+using Gestao_Composicoes_Autorais_Src.Service.Interfaces.ControllerService;
 
 namespace Gestao_Composicoes_Autorais_Src.Controllers
 {
@@ -10,7 +9,7 @@ namespace Gestao_Composicoes_Autorais_Src.Controllers
     [Route("/autores")]
     public class AutorController : ControllerBase
     {
-        private IAutorService _autorService;
+        private readonly IAutorService _autorService;
 
         public AutorController(IAutorService autorService)
         {
@@ -20,31 +19,31 @@ namespace Gestao_Composicoes_Autorais_Src.Controllers
         [HttpGet]
         public ObjectResult Get()
         {
-            return _autorService.ObterTodosAutores();
+            return _autorService.ObterTodosItens();
         }
 
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ObjectResult Get(long id)
         {
-            throw new NotImplementedException();
+            return _autorService.ObterItemPorId(id);
         }
 
         [HttpPost]
         public ObjectResult Post([FromBody] AutorForm form)
         {
-            return _autorService.AdicionarNovoAutor(form);
+            return _autorService.AdicionarNovoItem(form);
         }
 
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public ObjectResult Put(long id, [FromBody] AutorForm form)
         {
-            throw new NotImplementedException();
+            return _autorService.AtualizarItem(id, form);
         }
 
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ObjectResult Delete(long id)
         {
-            throw new NotImplementedException();
+            return _autorService.RemoverItem(id);
         }
     }
 }

@@ -3,6 +3,7 @@
     public enum GeneroMusical
     {
         GOSPEL,
-        Rock
+        ROCK,
+        SERTANEJO
     }
 }
