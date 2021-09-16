@@ -18,7 +18,7 @@ namespace Gestao_Composicoes_Autorais_Tests.FakeDatabase
             return new MusicasRepository(new ApplicationContext(options), new ExceptionStrategyContextHandler());
         }
 
-        internal static IAutoresRepository ObterAutoresRepository(string nomeTeste)
+        public static IAutoresRepository ObterAutoresRepository(string nomeTeste)
         {
             DbContextOptions options = new DbContextOptionsBuilder<ApplicationContext>()
                 .UseInMemoryDatabase(nomeTeste)

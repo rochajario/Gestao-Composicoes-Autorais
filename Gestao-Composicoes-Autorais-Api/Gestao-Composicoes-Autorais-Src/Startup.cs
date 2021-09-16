@@ -4,8 +4,9 @@ using Gestao_Composicoes_Autorais_Src.Data.Context;
 using Gestao_Composicoes_Autorais_Src.Data.Interfaces;
 using Gestao_Composicoes_Autorais_Src.Exceptions;
 using Gestao_Composicoes_Autorais_Src.Exceptions.Interfaces;
-using Gestao_Composicoes_Autorais_Src.Service;
+using Gestao_Composicoes_Autorais_Src.Service.ControllerService;
 using Gestao_Composicoes_Autorais_Src.Service.Converter;
+using Gestao_Composicoes_Autorais_Src.Service.Interfaces.ControllerService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -42,7 +43,8 @@ namespace Gestao_Composicoes_Autorais_Src
             services.AddTransient(typeof(AutorConverter));
             services.AddTransient(typeof(MusicaConverter));
 
-            services.AddTransient<IAutorService, AutorService>();
+            services.AddTransient<IAutorService, AutorControllerService>();
+            services.AddTransient<IMusicaService, MusicaControllerService>();
 
         }
 
@@ -60,7 +62,7 @@ namespace Gestao_Composicoes_Autorais_Src
             app.UseRouting();
 
             app.UseParametrosCorsCustomizados();
-            
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

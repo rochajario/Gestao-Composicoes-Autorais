@@ -2,9 +2,9 @@
 {
     public enum CategoriaAutoral
     {
-        AUTOR = 1,
-        COMPOSITOR = 2,
-        INTERPRETE = 3,
-        MUSICO = 4
+        AUTOR,
+        COMPOSITOR,
+        INTERPRETE,
+        MUSICO
     }
 }
