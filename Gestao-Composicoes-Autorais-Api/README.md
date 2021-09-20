@@ -3,7 +3,7 @@
 
  1. [Visão Geral](#overview)
  2. [Modelagem de Dados](#modelagem-de-dados)
- 3. [Desenvolvedor](#desenvolvido-por)
+ 4. [Desenvolvedor](#desenvolvido-por)
 
 ### Overview
 Desenvolvido com linguagem C# e Entity Framework Core com o mínimo possível de comentários prezando por um código limpo e de fácil compreensão.
@@ -16,7 +16,7 @@ Observando as seguintes premissas:
 	 - **GoF** Pattern *'Decorator'*;
 	 - **Gof** Pattern *'Template Method'*;
 
-# Modelagem de Dados
+### Modelagem de Dados
 ![Diagrama-ER](https://user-images.githubusercontent.com/56648231/134039582-d135ffbf-d108-470a-b17f-03809c60d233.PNG)
 
 ##### Script Data Definition Language (DDL)
@@ -55,7 +55,7 @@ Observando as seguintes premissas:
 
     SELECT autores.Id, autores.Nome, autores.Categoria FROM autores INNER JOIN autormusica ON autores.Id = autormusica.AutoresID WHERE autormusica.Musicasid =<'id_da_musica'>;
 
-# Desenvolvido por
+### Desenvolvido por
 Jario Rocha dos Santos Junior - 2021 
 https://www.linkedin.com/in/rochajario/
 rochajario@gmail.com
