@@ -10,8 +10,8 @@ namespace Gestao_Composicoes_Autorais_Src.Service.ControllerService
 {
     public class MusicaControllerService : BaseControllerService<Musica,MusicaForm>, IMusicaService
     {
-        private readonly MusicaConverter _musicaConverter;
-        private readonly IMusicasRepository _musicasRepository;
+        protected readonly MusicaConverter _musicaConverter;
+        protected readonly IMusicasRepository _musicasRepository;
 
         public MusicaControllerService(MusicaConverter musicaConverter, IMusicasRepository musicasRepository)
         {
@@ -19,33 +19,33 @@ namespace Gestao_Composicoes_Autorais_Src.Service.ControllerService
             _musicasRepository = musicasRepository;
         }
 
-        public ObjectResult AdicionarNovoItem(MusicaForm form)
+        public virtual ObjectResult AdicionarNovoItem(MusicaForm form)
         {
             var objetoCriado = _musicaConverter.Convert(form);
             _musicasRepository.Create(objetoCriado);
             return ObterObjetoRetornoEmpacotado(objetoCriado, HttpStatusCode.Created);
         }
 
-        public ObjectResult AtualizarItem(long id, MusicaForm form)
+        public virtual ObjectResult AtualizarItem(long id, MusicaForm form)
         {
             var dadosAtualizadosDaMusica = AtualizaDadosDeItemEmMemoria(id, form);
             _musicasRepository.Update(dadosAtualizadosDaMusica);
             return ObterObjetoRetornoEmpacotado(dadosAtualizadosDaMusica, HttpStatusCode.OK);
         }
 
-        public ObjectResult ObterItemPorId(long id)
+        public virtual ObjectResult ObterItemPorId(long id)
         {
             var musica = _musicasRepository.GetById(id);
             return ObterObjetoRetornoEmpacotado(musica, HttpStatusCode.OK);
         }
 
-        public ObjectResult ObterTodosItens()
+        public virtual ObjectResult ObterTodosItens()
         {
             var listagemMusicas = _musicasRepository.GetAll();
             return ObterObjetoRetornoEmpacotado(listagemMusicas, HttpStatusCode.OK);
         }
 
-        public ObjectResult RemoverItem(long id)
+        public virtual ObjectResult RemoverItem(long id)
         {
             _musicasRepository.Delete(id);
             return ObterObjetoRetornoEmpacotado(null, HttpStatusCode.NoContent);
@@ -58,6 +58,8 @@ namespace Gestao_Composicoes_Autorais_Src.Service.ControllerService
 
             dadosBanco.Nome = dadosFormulario.Nome;
             dadosBanco.Genero = dadosFormulario.Genero;
+            dadosBanco.Autores = default;
+
             return dadosBanco;
         }
     }

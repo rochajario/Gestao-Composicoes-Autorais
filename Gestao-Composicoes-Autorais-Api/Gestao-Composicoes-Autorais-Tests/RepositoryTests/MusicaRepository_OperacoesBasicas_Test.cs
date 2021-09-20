@@ -2,6 +2,7 @@
 using Gestao_Composicoes_Autorais_Src.Model.Enums;
 using Gestao_Composicoes_Autorais_Tests.FakeDatabase;
 using ServiceStack.Host;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using Xunit;
@@ -18,7 +19,15 @@ namespace Gestao_Composicoes_Autorais_Tests.RepositoryTests
 
             var musica = new Musica {
                 Nome = "Tudo que eu vivi",
-                Genero = GeneroMusical.GOSPEL
+                Genero = GeneroMusical.GOSPEL,
+                Autores = new List<Autor> (){
+                    new Autor
+                    {
+                        Id=1,
+                        Nome ="Fulano",
+                        Categoria = CategoriaAutoral.AUTOR
+                    }
+                }
             };
 
             //Act
@@ -27,7 +36,8 @@ namespace Gestao_Composicoes_Autorais_Tests.RepositoryTests
 
             //Assert
             Assert.Equal("Tudo que eu vivi", musicaCriada.Nome);
-            Assert.Equal(GeneroMusical.GOSPEL, musicaCriada.Genero);            
+            Assert.Equal(GeneroMusical.GOSPEL, musicaCriada.Genero);
+            Assert.Equal(1, musicaCriada.Autores.ToArray()[0].Id);
         }
 
         [Fact]

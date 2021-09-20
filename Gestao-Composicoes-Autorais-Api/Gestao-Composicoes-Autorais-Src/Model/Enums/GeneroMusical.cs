@@ -2,6 +2,9 @@
 {
     public enum GeneroMusical
     {
+        POP,
+        RAP,
+        ELETRONICA,
         GOSPEL,
         ROCK,
         SERTANEJO

@@ -12,14 +12,33 @@ namespace Gestao_Composicoes_Autorais_Src.Configuration
         {
             if (context.Exception is not HttpException)
             {
-                context.Result = new ObjectResult(MensagensErro.ErroInesperado) { StatusCode = (int)HttpStatusCode.InternalServerError };
+                context.Result = ObterRetornoErro();
             }
             else
             {
-                HttpException ex = (HttpException)context.Exception;
-                context.Result = new ObjectResult(ex.StatusDescription) { StatusCode = ex.StatusCode };
+                HttpException exception = (HttpException)context.Exception;
+                context.Result = ObterRetornoErro(exception);
             }
             context.ExceptionHandled = true;
+        }
+
+        protected ObjectResult ObterRetornoErro(HttpException exception = null)
+        {
+            if(exception != null)
+            {
+                return new ObjectResult(new ResultadoErro(exception.StatusDescription)) { StatusCode = exception.StatusCode };
+            }
+
+            return new ObjectResult(new ResultadoErro(MensagensErro.ErroInesperado)) { StatusCode = (int)HttpStatusCode.InternalServerError };
+        }
+    }
+
+    public class ResultadoErro
+    {
+        public string Erro { get; set; }
+        public ResultadoErro(string mensagem)
+        {
+            Erro = mensagem;
         }
     }
 }

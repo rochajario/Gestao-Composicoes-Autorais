@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gestao_Composicoes_Autorais_Src.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20210916021759_Mysql_Configuration")]
-    partial class Mysql_Configuration
+    [Migration("20210917212000_Mysql_Update")]
+    partial class Mysql_Update
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -17,6 +17,21 @@ namespace Gestao_Composicoes_Autorais_Src.Migrations
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.10");
+
+            modelBuilder.Entity("AutorMusica", b =>
+                {
+                    b.Property<long>("AutoresId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("MusicasId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("AutoresId", "MusicasId");
+
+                    b.HasIndex("MusicasId");
+
+                    b.ToTable("AutorMusica");
+                });
 
             modelBuilder.Entity("Gestao_Composicoes_Autorais_Src.Model.Autor", b =>
                 {
@@ -52,6 +67,21 @@ namespace Gestao_Composicoes_Autorais_Src.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Musicas");
+                });
+
+            modelBuilder.Entity("AutorMusica", b =>
+                {
+                    b.HasOne("Gestao_Composicoes_Autorais_Src.Model.Autor", null)
+                        .WithMany()
+                        .HasForeignKey("AutoresId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Gestao_Composicoes_Autorais_Src.Model.Musica", null)
+                        .WithMany()
+                        .HasForeignKey("MusicasId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
