@@ -82,7 +82,7 @@ Após preparar o arquivo com as definições de variáveis locais necessárias p
 Realizados os passos acima a aplicação está preparada para ser iniciada.
 Navegue até a pasta no caminho à baixo e Inicialize o container pelo arquivo Dockerfile.
 
-> Gestao-Composicoes-Autorais/Gestao-Composicoes-Autorais-Api/Gestao-Composicoes-Autorais-Src/
+> Gestao-Composicoes-Autorais/Gestao-Composicoes-Autorais-Api/
 
 
 ### Desenvolvido por
