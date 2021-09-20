@@ -16,6 +16,21 @@ namespace Gestao_Composicoes_Autorais_Src.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.10");
 
+            modelBuilder.Entity("AutorMusica", b =>
+                {
+                    b.Property<long>("AutoresId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("MusicasId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("AutoresId", "MusicasId");
+
+                    b.HasIndex("MusicasId");
+
+                    b.ToTable("AutorMusica");
+                });
+
             modelBuilder.Entity("Gestao_Composicoes_Autorais_Src.Model.Autor", b =>
                 {
                     b.Property<long>("Id")
@@ -50,6 +65,21 @@ namespace Gestao_Composicoes_Autorais_Src.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Musicas");
+                });
+
+            modelBuilder.Entity("AutorMusica", b =>
+                {
+                    b.HasOne("Gestao_Composicoes_Autorais_Src.Model.Autor", null)
+                        .WithMany()
+                        .HasForeignKey("AutoresId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Gestao_Composicoes_Autorais_Src.Model.Musica", null)
+                        .WithMany()
+                        .HasForeignKey("MusicasId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -21,13 +21,13 @@ namespace Gestao_Composicoes_Autorais_Src.Service.ControllerService
             _autorConverter = autorConverter;
         }
 
-        public ObjectResult ObterTodosItens()
+        public virtual ObjectResult ObterTodosItens()
         {
             var result = _autoresRepository.GetAll();
             return ObterObjetoRetornoEmpacotado(result, HttpStatusCode.OK);
         }
 
-        public ObjectResult AdicionarNovoItem(AutorForm form)
+        public virtual ObjectResult AdicionarNovoItem(AutorForm form)
         {
             Autor novoAutor = _autorConverter.Convert(form);
             _autoresRepository.Create(novoAutor);
@@ -35,13 +35,13 @@ namespace Gestao_Composicoes_Autorais_Src.Service.ControllerService
 
         }
 
-        public ObjectResult ObterItemPorId(long id)
+        public virtual ObjectResult ObterItemPorId(long id)
         {
             var autor = _autoresRepository.GetById(id);
             return ObterObjetoRetornoEmpacotado(autor, HttpStatusCode.OK);
         }
 
-        public ObjectResult AtualizarItem(long id, AutorForm form)
+        public virtual ObjectResult AtualizarItem(long id, AutorForm form)
         {
             Autor dadosAtualizadosAutor = AtualizaDadosDeItemEmMemoria(id, form);
             _autoresRepository.Update(dadosAtualizadosAutor);

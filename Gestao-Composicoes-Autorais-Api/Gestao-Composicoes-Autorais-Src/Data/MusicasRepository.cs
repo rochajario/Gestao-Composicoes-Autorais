@@ -3,6 +3,7 @@ using Gestao_Composicoes_Autorais_Src.Data.Interfaces;
 using Gestao_Composicoes_Autorais_Src.Exceptions;
 using Gestao_Composicoes_Autorais_Src.Exceptions.Interfaces;
 using Gestao_Composicoes_Autorais_Src.Model;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -26,7 +27,7 @@ namespace Gestao_Composicoes_Autorais_Src.Data
             _database.SaveChanges();
         }
 
-        public List<Musica> GetAll()
+        public virtual List<Musica> GetAll()
         {
             var result = _database.Musicas.ToList();
             if (result.Count == 0)
@@ -36,7 +37,7 @@ namespace Gestao_Composicoes_Autorais_Src.Data
             return result;
         }
 
-        public Musica GetById(long id)
+        public virtual Musica GetById(long id)
         {
             var result = _database.Musicas.FirstOrDefault(m => m.Id == id);
             if (result == null)

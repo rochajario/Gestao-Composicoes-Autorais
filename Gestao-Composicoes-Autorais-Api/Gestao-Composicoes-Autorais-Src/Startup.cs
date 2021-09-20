@@ -36,15 +36,15 @@ namespace Gestao_Composicoes_Autorais_Src
 
             //TODO - Criar Container de Injeção de Dependência para Interfaces de Repositórios e Serviços de Domínio da Aplicação.
             services.AddDbContext<ApplicationContext>();
-            services.AddTransient<IMusicasRepository, MusicasRepository>();
+            services.AddTransient<IMusicasRepository, MusicasRepositoryExtendido>();
             services.AddTransient<IAutoresRepository, AutoresRepository>();
 
             services.AddTransient<IExceptionStrategyContextHandler, ExceptionStrategyContextHandler>();
             services.AddTransient(typeof(AutorConverter));
             services.AddTransient(typeof(MusicaConverter));
 
-            services.AddTransient<IAutorService, AutorControllerService>();
-            services.AddTransient<IMusicaService, MusicaControllerService>();
+            services.AddTransient<IAutorService, AutorControllerServiceExtendido>();
+            services.AddTransient<IMusicaService, MusicaControllerServiceExtendido>();
 
         }
 

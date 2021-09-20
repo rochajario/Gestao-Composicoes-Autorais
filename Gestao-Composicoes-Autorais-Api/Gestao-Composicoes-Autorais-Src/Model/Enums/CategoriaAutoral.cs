@@ -5,6 +5,7 @@
         AUTOR,
         COMPOSITOR,
         INTERPRETE,
-        MUSICO
+        MUSICISTA,
+
     }
 }
