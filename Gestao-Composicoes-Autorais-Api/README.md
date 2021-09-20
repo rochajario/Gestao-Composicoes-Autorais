@@ -65,17 +65,17 @@ Pré requisito:
 Após baixar o conteúdo do repositório é necessário configurar o acesso ao banco de dados através do arquivo:
 > Gestao-Composicoes-Autorais/Gestao-Composicoes-Autorais-Api/Gestao-Composicoes-Autorais-Src/launchSettings.json
 ```json
-        "Docker": {
-    	    "commandName": "Docker",
-    	    "launchBrowser": true,
-    	    "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
-    	    "publishAllPorts": true,
-    	    "useSSL": true
-    	    "environmentVariables": {
-			    "DB_CONNECTION_STRING": "server=<endereço-do-seu-host>;user=<seu-usuario>;password=<sua-senha>;database=<sua-base-de-dados>",
-			    "ASPNETCORE_ENVIRONMENT": "Development"
-			}
-        }
+    "Docker": {
+        "commandName": "Docker",
+    	"launchBrowser": true,
+    	"launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+    	"publishAllPorts": true,
+    	"useSSL": true,
+    	"environmentVariables": {
+		    "DB_CONNECTION_STRING": "server=<endereço-do-seu-host>;user=<seu-usuario>;password=<sua-senha>;database=<sua-base-de-dados>",
+			"ASPNETCORE_ENVIRONMENT": "Development"
+		}
+    }
  ```       
 Após preparar o arquivo com as definições de variáveis locais necessárias para que o Docker seja capaz de identificar sua base de dados será necessário executar o [Script DDL](#script-data-definition-language) documentado na seção [Modelagem de Dados](#modelagem-de-dados)
 
