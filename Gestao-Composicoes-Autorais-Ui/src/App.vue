@@ -58,8 +58,8 @@ select {
 }
 
 .tabela-multicor table {
-  border-collapse: collapse;
-  border: none;
+  border-collapse:collapse;
+  border: transparent;
   text-align: center;
 }
 

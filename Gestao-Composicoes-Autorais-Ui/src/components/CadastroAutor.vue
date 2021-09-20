@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import ambiente from "../store/constantes";
 import axios from "axios";
 
 export default {
@@ -38,7 +39,7 @@ export default {
   methods: {
     cadastrarNovoAutor() {
       axios
-        .post("https://localhost:5001/autores", this.autor)
+        .post(ambiente.SERVER_URL+"/autores", this.autor)
         .then(function (response) {
           this.$store.commit("adicionarAutor", response.data);
           window.alert("Autor "+response.data.nome+" adicionado com sucesso!");

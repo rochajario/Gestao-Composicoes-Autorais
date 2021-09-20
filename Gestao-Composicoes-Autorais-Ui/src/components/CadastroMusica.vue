@@ -32,12 +32,6 @@
             </select>
           </td>
         </tr>
-        <tr>
-          <th>Autores</th>
-          <td>
-            <input type="text" placeholder="Pesquisar por Nome" />
-          </td>
-        </tr>
       </table>
     </div>
     <div>
@@ -88,6 +82,8 @@
 <script>
 import { mapActions, mapGetters } from "vuex";
 import axios from "axios";
+import ambiente from "../store/constantes";
+
 export default {
   data() {
     return {
@@ -117,7 +113,7 @@ export default {
     enviarFormulario() {
       this.setMusica();
       axios
-        .post("https://localhost:5001/musicas", this.musica)
+        .post(ambiente.SERVER_URL+"/musicas", this.musica)
         .then(function () {
           window.alert("Música adicionada com sucesso!");
         })
@@ -127,7 +123,7 @@ export default {
     },
     removerAutor(codAutor) {
       axios
-        .delete("https://localhost:5001/autores/" + codAutor)
+        .delete(ambiente.SERVER_URL+"/autores/" + codAutor)
         .then(function () {
           window.alert("Autor removido com sucesso!");
           this.requestListaDeAutores;

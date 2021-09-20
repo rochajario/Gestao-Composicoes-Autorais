@@ -16,9 +16,14 @@ namespace Gestao_Composicoes_Autorais_Src.Data.Context
             if (!optionsBuilder.IsConfigured)
             {
                 /*
+                    Atenção!
+                 
                     Caso opte-se por utilizar uma abordagem de desenvolvimento Code-First 
                     será necessário declarar de maneira explícita a connection string do banco de dados
                     conforme padrão no arquivo /Properties/launchSettings.json
+
+                    Alterações geradas através do EF-Core precisam ser aplicadas no ambiente cloud através de Script-Migration
+
                 */
                 var databaseConnectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
                 optionsBuilder.UseMySql(databaseConnectionString, new MySqlServerVersion(new Version(15, 1)))

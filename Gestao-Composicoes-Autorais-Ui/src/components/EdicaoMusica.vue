@@ -89,6 +89,8 @@
 <script>
 import { mapActions, mapGetters } from "vuex";
 import axios from "axios";
+import ambiente from "../store/constantes";
+
 export default {
   props: {
     musica: {
@@ -116,7 +118,7 @@ export default {
       this.setMusica();
       axios
         .put(
-          "https://localhost:5001/musicas/" + this.musica.codMusica,
+          ambiente.SERVER_URL+"/musicas/" + this.musica.codMusica,
           this.musica
         )
         .then(function () {
@@ -128,7 +130,7 @@ export default {
     },
     removerAutor(codAutor) {
       axios
-        .delete("https://localhost:5001/autores/" + codAutor)
+        .delete(ambiente.SERVER_URL+"/autores/" + codAutor)
         .then(function () {
           window.alert("Autor deletado com sucesso!");
         })

@@ -5,7 +5,7 @@
       <loader />
     </div>
     <div v-else>
-      <table>
+      <table class="tabela-multicor">
         <tr>
           <th>Código</th>
           <th>Musica</th>
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import ambiente from "../store/constantes";
 import axios from "axios";
 import Loader from "./shared/Loader.vue";
 import { mapGetters, mapActions } from "vuex";
@@ -54,7 +55,7 @@ export default {
   methods: {
     deletaMusica(codMusica) {
       axios
-        .delete("https://localhost:5001/musicas/" + codMusica)
+        .delete(ambiente.SERVER_URL+"/musicas/" + codMusica)
         .then(function () {
           window.alert("Música Removida com sucesso!");
           this.requestListaDeMusicas;

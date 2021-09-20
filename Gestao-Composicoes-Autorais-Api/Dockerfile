@@ -18,4 +18,5 @@ RUN dotnet publish "Gestao-Composicoes-Autorais-Src.csproj" -c Release -o /app/p
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Gestao-Composicoes-Autorais-Src.dll"]
+#ENTRYPOINT ["dotnet", "Gestao-Composicoes-Autorais-Src.dll"]
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet Gestao-Composicoes-Autorais-Src.dll

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import ambiente from './constantes';
 import Vue from 'vue';
 import Vuex from 'vuex';
 
@@ -64,7 +65,7 @@ export default new Vuex.Store({
 
     //Musicas
     requestListaDeMusicas(state) {
-      axios.get("https://localhost:5001/musicas")
+      axios.get(ambiente.SERVER_URL+"/musicas")
         .then(function (response) {
           state.commit("setMusicas", response.data)
         })
@@ -75,7 +76,7 @@ export default new Vuex.Store({
     
     //Videos
     requestListaDeAutores(state) {
-      axios.get("https://localhost:5001/autores")
+      axios.get(ambiente.SERVER_URL+"/autores")
         .then(function (response) {
           state.commit("setAutores", response.data)
         })
