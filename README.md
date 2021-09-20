@@ -11,7 +11,7 @@ Observando as seguintes premissas:
 	 - **Gof** Pattern *'Template Method'*;
 
 ### Modelagem de Dados
-IMAGEM_AQUI
+![Diagrama-ER](https://user-images.githubusercontent.com/56648231/134039582-d135ffbf-d108-470a-b17f-03809c60d233.PNG)
 
 ##### Script Data Definition Language (DDL)
 
