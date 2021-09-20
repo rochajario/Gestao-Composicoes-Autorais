@@ -18,10 +18,12 @@ Este projeto está configurado atualmente para consumir uma [API-Backend](https:
 Caso opte-se por executar localmente a API, será necessário realizar os passos de configuração indicados na sessão ['Executando em Ambiente Local'](https://github.com/rochajario/Gestao-Composicoes-Autorais/tree/main/Gestao-Composicoes-Autorais-Api) do projeto de Backend.
 Também será necessário alterar o arquivo *Gestao-Composicoes-Autorais/Gestao-Composicoes-Autorais-Ui/src/store/constantes.js* da seguinte maneira:
 
-    const  ambiente={
-	    SERVER_URL:"https://localhost:5001",
-    };
-    export  default  ambiente;
+```javascript
+const  ambiente={
+  SERVER_URL:"https://localhost:5001",
+};
+export  default  ambiente;
+```
 
 Obs.: Prefira executar o projeto pelo próprio binário localmente.
 Caso opte-se por verificar o funcionamento da aplicação através da API préviamente publicada os passos à baixo devem ser suficientes.
