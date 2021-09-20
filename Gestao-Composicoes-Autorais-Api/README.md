@@ -21,7 +21,7 @@ Observando as seguintes premissas:
 ![Diagrama-ER](https://user-images.githubusercontent.com/56648231/134039582-d135ffbf-d108-470a-b17f-03809c60d233.PNG)
 
 ##### Script Data Definition Language
-
+```sql
     START TRANSACTION;
     ALTER DATABASE CHARACTER SET utf8mb4;
     
@@ -50,12 +50,12 @@ Observando as seguintes premissas:
     CREATE INDEX `IX_AutorMusica_MusicasId` ON `AutorMusica` (`MusicasId`);
     
     COMMIT;
-
+```
 ##### Consumindo relacionamento entre tabelas Musicas e Autores manualmente:
 *Comando SQL que realiza Seleção de Autores à partir da tabela de junção obtendo apenas aqueles que estão relacionados com id de uma música em específico.*
-
+```sql
     SELECT autores.Id, autores.Nome, autores.Categoria FROM autores INNER JOIN autormusica ON autores.Id = autormusica.AutoresID WHERE autormusica.Musicasid =<'id_da_musica'>;
-
+```
 
 ### Executando em Ambiente Local
 Pré requisito:
@@ -64,7 +64,7 @@ Pré requisito:
 
 Após baixar o conteúdo do repositório é necessário configurar o acesso ao banco de dados através do arquivo:
 > Gestao-Composicoes-Autorais/Gestao-Composicoes-Autorais-Api/Gestao-Composicoes-Autorais-Src/launchSettings.json
-
+```json
         "Docker": {
     	    "commandName": "Docker",
     	    "launchBrowser": true,
@@ -76,7 +76,7 @@ Após baixar o conteúdo do repositório é necessário configurar o acesso ao b
 			    "ASPNETCORE_ENVIRONMENT": "Development"
 			}
         }
-        
+ ```       
 Após preparar o arquivo com as definições de variáveis locais necessárias para que o Docker seja capaz de identificar sua base de dados será necessário executar o [Script DDL](#script-data-definition-language) documentado na seção [Modelagem de Dados](#modelagem-de-dados)
 
 Realizados os passos acima a aplicação está preparada para ser iniciada.
@@ -85,8 +85,8 @@ Navegue até a pasta no caminho à baixo e Inicialize o container pelo arquivo D
 > Gestao-Composicoes-Autorais/Gestao-Composicoes-Autorais-Api/
 
 
-### Desenvolvido por
-Jario Rocha dos Santos Junior - 2021 
-https://www.linkedin.com/in/rochajario/
-rochajario@gmail.com
+### Desenvolvido por:
+Jario Rocha dos Santos Junior - 2021  
+https://www.linkedin.com/in/rochajario/  
+rochajario@gmail.com  
 ##### Licença MIT.

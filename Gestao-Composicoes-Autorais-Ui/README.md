@@ -45,8 +45,8 @@ npm run build
 npm run lint
 ```
 
-### Desenvolvido por
-Jario Rocha dos Santos Junior - 2021 
-https://www.linkedin.com/in/rochajario/
-rochajario@gmail.com
+### Desenvolvido por:
+Jario Rocha dos Santos Junior - 2021  
+https://www.linkedin.com/in/rochajario/  
+rochajario@gmail.com  
 ##### Licença MIT.
