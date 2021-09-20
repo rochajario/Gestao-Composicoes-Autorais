@@ -3,6 +3,7 @@
 
  1. [Visão Geral](#overview)
  2. [Modelagem de Dados](#modelagem-de-dados)
+ 3. [Executando em Ambiente Local](#executando-em-ambiente-local)
  4. [Desenvolvedor](#desenvolvido-por)
 
 ### Overview
@@ -19,7 +20,7 @@ Observando as seguintes premissas:
 ### Modelagem de Dados
 ![Diagrama-ER](https://user-images.githubusercontent.com/56648231/134039582-d135ffbf-d108-470a-b17f-03809c60d233.PNG)
 
-##### Script Data Definition Language (DDL)
+##### Script Data Definition Language
 
     START TRANSACTION;
     ALTER DATABASE CHARACTER SET utf8mb4;
@@ -54,6 +55,35 @@ Observando as seguintes premissas:
 *Comando SQL que realiza Seleção de Autores à partir da tabela de junção obtendo apenas aqueles que estão relacionados com id de uma música em específico.*
 
     SELECT autores.Id, autores.Nome, autores.Categoria FROM autores INNER JOIN autormusica ON autores.Id = autormusica.AutoresID WHERE autormusica.Musicasid =<'id_da_musica'>;
+
+
+### Executando em Ambiente Local
+Pré requisito:
+
+ - Possuir na máquina local o serviço do MySql na versão 8.15 ou maior
+
+Após baixar o conteúdo do repositório é necessário configurar o acesso ao banco de dados através do arquivo:
+> Gestao-Composicoes-Autorais/Gestao-Composicoes-Autorais-Api/Gestao-Composicoes-Autorais-Src/launchSettings.json
+
+        "Docker": {
+    	    "commandName": "Docker",
+    	    "launchBrowser": true,
+    	    "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+    	    "publishAllPorts": true,
+    	    "useSSL": true
+    	    "environmentVariables": {
+			    "DB_CONNECTION_STRING": "server=<endereço-do-seu-host>;user=<seu-usuario>;password=<sua-senha>;database=<sua-base-de-dados>",
+			    "ASPNETCORE_ENVIRONMENT": "Development"
+			}
+        }
+        
+Após preparar o arquivo com as definições de variáveis locais necessárias para que o Docker seja capaz de identificar sua base de dados será necessário executar o [Script DDL](#script-data-definition-language) documentado na seção [Modelagem de Dados](#modelagem-de-dados)
+
+Realizados os passos acima a aplicação está preparada para ser iniciada.
+Navegue até a pasta no caminho à baixo e Inicialize o container pelo arquivo Dockerfile.
+
+> Gestao-Composicoes-Autorais/Gestao-Composicoes-Autorais-Api/Gestao-Composicoes-Autorais-Src/
+
 
 ### Desenvolvido por
 Jario Rocha dos Santos Junior - 2021 
