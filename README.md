@@ -1,4 +1,8 @@
 ## Gestão de Direitos Autorais
+1. [Objetivo](#objetivo)
+2. [Aplicação Backend](https://github.com/rochajario/Gestao-Composicoes-Autorais/tree/main/Gestao-Composicoes-Autorais-Api)
+3. [Aplicação Frontend](https://github.com/rochajario/Gestao-Composicoes-Autorais/tree/main/Gestao-Composicoes-Autorais-Ui/frontend)
+
 ### Objetivo
 Desenvolver um cadastro de músicas e sua respectiva composição autoral. Cada música deverá ter as seguintes informações:
  - Código da Música
