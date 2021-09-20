@@ -1,7 +1,8 @@
 ## Gestão de Direitos Autorais
-1. [Objetivo](#objetivo)
-2. [Aplicação Backend](https://github.com/rochajario/Gestao-Composicoes-Autorais/tree/main/Gestao-Composicoes-Autorais-Api)
-3. [Aplicação Frontend](https://github.com/rochajario/Gestao-Composicoes-Autorais/tree/main/Gestao-Composicoes-Autorais-Ui)
+🎯 [Objetivo](#objetivo)  
+🖼️ [Telas Desenvolvidas](#telas-desenvolvidas)  
+⚙️ [Backend](https://github.com/rochajario/Gestao-Composicoes-Autorais/tree/main/Gestao-Composicoes-Autorais-Api)  
+✨ [Frontend](https://github.com/rochajario/Gestao-Composicoes-Autorais/tree/main/Gestao-Composicoes-Autorais-Ui)  
 
 ### Objetivo
 Desenvolver um cadastro de músicas e sua respectiva composição autoral. Cada música deverá ter as seguintes informações:
@@ -13,12 +14,13 @@ Desenvolver um cadastro de músicas e sua respectiva composição autoral. Cada 
 	 - Nome do Autor
 	 - Categoria (Compositor, Intérprete, Músico, etc.)
 	 
-O sistema deverá ter, ao menos, duas telas:
- - Listagem das músicas
- - Cadastro/Edição de uma música
+### Telas Desenvolvidas:
+<img src="https://user-images.githubusercontent.com/56648231/134077531-37e27f74-04ac-4bd8-9a8b-e1709b3f09a7.PNG" width="550px">
+<img src="https://user-images.githubusercontent.com/56648231/134077531-37e27f74-04ac-4bd8-9a8b-e1709b3f09a7.PNG" width="550px">
+<img src="https://user-images.githubusercontent.com/56648231/134077543-0b995aa1-ca1f-4489-8024-7d1ea1d5c44e.PNG" width="550px">
 
-##### Desenvolvido por
-Jario Rocha dos Santos Junior - 2021 
-https://www.linkedin.com/in/rochajario/
-rochajario@gmail.com
+### Desenvolvido por:
+Jario Rocha dos Santos Junior - 2021  
+https://www.linkedin.com/in/rochajario/  
+rochajario@gmail.com  
 ##### Licença MIT.
