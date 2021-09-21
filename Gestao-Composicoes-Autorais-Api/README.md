@@ -60,7 +60,7 @@ Observando as seguintes premissas:
 ### Executando em Ambiente Local
 Pré requisito:
 
- - Possuir na máquina local o serviço do MySql na versão 8.15 ou maior
+ - Possuir na máquina local o serviço do MySql na versão 8.0.15 ou maior
 
 Após baixar o conteúdo do repositório é necessário configurar o acesso ao banco de dados através do arquivo:
 > Gestao-Composicoes-Autorais/Gestao-Composicoes-Autorais-Api/Gestao-Composicoes-Autorais-Src/launchSettings.json
