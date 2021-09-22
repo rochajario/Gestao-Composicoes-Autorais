@@ -15,6 +15,7 @@ Desenvolver um cadastro de músicas e sua respectiva composição autoral. Cada 
 	 - Categoria (Compositor, Intérprete, Músico, etc.)
 	 
 ### Telas Desenvolvidas:
+
 <img src="https://user-images.githubusercontent.com/56648231/134077531-37e27f74-04ac-4bd8-9a8b-e1709b3f09a7.PNG" width="550px">
 <img src="https://user-images.githubusercontent.com/56648231/134079485-814c1668-76d8-4eeb-bb30-2c915671d8c0.PNG" width="550px">
 <img src="https://user-images.githubusercontent.com/56648231/134077543-0b995aa1-ca1f-4489-8024-7d1ea1d5c44e.PNG" width="550px">
