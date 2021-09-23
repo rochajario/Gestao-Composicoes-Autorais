@@ -1,4 +1,5 @@
 ## Gestão de Direitos Autorais
+[![Actions Status](https://github.com/rochajario/Gestao-Composicoes-Autorais/actions/workflows/build-test-api.yml/badge.svg)](https://github.com/rochajario/Gestao-Composicoes-Autorais/actions)
 ### Tabela de Conteúdos
 
  1. [Visão Geral](#overview)
