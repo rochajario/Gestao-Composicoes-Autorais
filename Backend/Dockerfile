@@ -1,8 +1,6 @@
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
 FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
 WORKDIR /app
-EXPOSE 443
+EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
@@ -18,5 +16,4 @@ RUN dotnet publish "Gestao-Composicoes-Autorais-Src.csproj" -c Release -o /app/p
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-#ENTRYPOINT ["dotnet", "Gestao-Composicoes-Autorais-Src.dll"]
-CMD ASPNETCORE_URLS=http://*:$PORT dotnet Gestao-Composicoes-Autorais-Src.dll
+ENTRYPOINT ["dotnet", "Gestao-Composicoes-Autorais-Src.dll"]
