@@ -1,0 +1,39 @@
+version: '3.7'
+services:
+  database:
+    container_name: database
+    image: rochajario/gestao-composicoes:database-0.1.0
+    build: ./Database/
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_DATABASE: gestao_composicoes_autorais
+    networks:
+      - internal-network
+  frontend:
+    container_name: frontend
+    image: rochajario/gestao-composicoes:frontend-0.1.0
+    build: ./Frontend/
+    ports:
+      - "8080:3000"
+    networks:
+      - internal-network
+  backend:
+    container_name: backend
+    image: rochajario/gestao-composicoes:backend-0.1.0
+    build: ./Backend/
+    environment:
+      DB_CONNECTION_STRING: server=database;user=admin;password=admin;database=gestao_composicoes_autorais
+      ASPNETCORE_ENVIRONMENT: Development
+    ports:
+      - "5000:80"
+    networks:
+      - internal-network
+    depends_on:
+      - database
+networks:
+  internal-network:
+    driver: bridge
